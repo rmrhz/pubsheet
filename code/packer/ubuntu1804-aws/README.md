@@ -1,0 +1,11 @@
+# Ubuntu 18.04 AWS AMI Base
+Creates a base image with the following packages
+
+* AWS CodeDeploy Agent
+* AWS CloudWatch Agent
+* Certbot
+* Nginx
+
+### Prerequisites
+* Packer >v1.6.4 (HCL)
+* Ansible >v2.0
