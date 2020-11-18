@@ -11,7 +11,7 @@ dotenv_path = join(file.parent, '.env')
 load_dotenv(dotenv_path)
 
 def get_env(variable):
-    try:
-        return os.environ[variable]
-    except KeyError:
-        logging.error("Environment variable '" + variable + "' not found")
+  try:
+    return os.environ[variable]
+  except KeyError:
+    logging.error("Environment variable '" + variable + "' not found")
