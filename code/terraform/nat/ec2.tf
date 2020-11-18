@@ -1,5 +1,5 @@
 resource "aws_instance" "nat" {
-  ami = "ami-063e3af9d2cc7fe94" # Latest Ubuntu 18.04 AMI as of posting
+  ami = data.aws_ami.ubuntu1804.image_id # Latest Ubuntu 18.04 AMI as of posting
   instance_type = "t3a.nano"
   key_name = "{your key here}"
   subnet_id = aws_subnet.c.id
