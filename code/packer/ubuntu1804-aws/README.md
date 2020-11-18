@@ -5,6 +5,8 @@ Creates a base image with the following packages
 * AWS CloudWatch Agent
 * Certbot
 * Nginx
+* Ruby
+* Python
 
 ### Prerequisites
 * Packer >v1.6.4 (HCL)
