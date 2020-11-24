@@ -57,7 +57,8 @@ build {
   sources = ["source.amazon-ebs.ubuntu1804"]
 
   provisioner "ansible" {
-    extra_arguments = ["-vvvv"]
+    # extra_arguments = ["-vvvv"]
     playbook_file   = "./playbook.yml"
+    user            = "ubuntu"
   }
 }
