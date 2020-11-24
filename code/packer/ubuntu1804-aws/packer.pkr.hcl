@@ -59,5 +59,6 @@ build {
   provisioner "ansible" {
     # extra_arguments = ["-vvvv"]
     playbook_file   = "./playbook.yml"
+    user            = "ubuntu"
   }
 }
