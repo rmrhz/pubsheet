@@ -1,5 +1,12 @@
 # IAM Policy Cheatsheet
 
+### Packer
+Permissions needed in order to run Packer and build an AMI with role assumption
+```bash
+# Policy : packer.json
+packer build template.pkr.hcl
+```
+
 ### Retrieving Encrypted Parameter
 ```bash
 # Policy : ssm.parameter.read.json
