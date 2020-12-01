@@ -19,13 +19,15 @@
 ```
 
 ### Keybindings (Chain of Command)
+* Use `ctrl+s` to overwrite save
+* Also possible: "unix", "windows", "cr"
 ```json
 {
-    "keys": ["alt+s"],  // use "ctrl+s" to overwrite save
+    "keys": ["alt+s"],
     "command": "chain",
     "args": {
         "commands": [
-            ["set_line_ending", {"type": "unix"}], // also possible: "unix", "windows", "cr"
+            ["set_line_ending", {"type": "unix"}],
             ["save"]
         ]
     },
