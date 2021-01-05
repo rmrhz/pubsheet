@@ -1,3 +1,8 @@
+variable "aws_account_id" {
+  type = string
+  default = ""
+}
+
 variable "instance_type" {
   type    = string
   default = "t2.micro"
@@ -29,6 +34,12 @@ locals {
 }
 
 source "amazon-ebs" "ubuntu1804" {
+  assume_role {
+    role_arn     = "arn:aws:iam::${var.aws_account_id}:role/packer"
+    session_name = "PackerBuilder-${local.timestamp}"
+    external_id  = "PackerBuilder"
+  }
+
   ami_name                    = "ubuntu1804-base-${local.timestamp}"
   associate_public_ip_address = true
   communicator                = "ssh"
@@ -42,7 +53,7 @@ source "amazon-ebs" "ubuntu1804" {
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["099720109477"]
+    owners      = ["099720109477"] // canonical id
   }
   ssh_keypair_name     = "${var.ssh_private_key_file}"
   # ssh_private_key_file = "~/.ssh/id_rsa" # The default value

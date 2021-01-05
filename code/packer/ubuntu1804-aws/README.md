@@ -11,3 +11,4 @@ Creates a base image with the following packages
 ### Prerequisites
 * Packer >v1.6.4 (HCL)
 * Ansible >v2.0
+* [IAM Policy](aws/iam/policies/packer.json)
