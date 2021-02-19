@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-role_arn=$CI_AWS_ROLE_ARN
+role_arn=$1
 session_name="${CI_BUILD_ID}-`date +%Y%m%d`"
 
 echo 'Assuming role...'
