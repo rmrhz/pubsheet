@@ -1,6 +1,7 @@
 # Ansible
 
 * Underlying process still updating
+
 src: https://github.com/ansible/ansible/issues/25414#issuecomment-477260545
 ```yml
     - name: Wait for any possibly running unattended upgrade to finish
