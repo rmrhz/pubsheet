@@ -16,6 +16,14 @@ aws ssm get-parameters --names "$PARAMETER_KEY" --with-decryption --query "Param
 ```
 
 ## S3
+* Return the most recent object version of a given S3 object
+```bash
+aws s3api list-object-versions \
+  --bucket "BUCKET_NAME" \
+  --prefix "BUCKET_URI" \
+  --query "Versions[0].VersionId" \
+  --output text
+```
 * Return the most recent file in a given S3 location
 ```bash
 # Use "--query" in the next iteration
