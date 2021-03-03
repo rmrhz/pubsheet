@@ -31,13 +31,13 @@ aws s3api list-objects-v2 \
   --bucket "BUCKET_NAME" \
   --prefix "BUCKET_URI" \
   --query 'sort_by(Contents, &LastModified)[-1].Key' \
-  --output=text
+  --output text
 ```
 * Return the latest version of an object
 ```bash
 aws s3api list-object-versions \
-  --bucket {bucket} \
-  --prefix {prefix} \
+  --bucket "BUCKET_NAME" \
+  --prefix "BUCKET_URI" \
   --no-paginate \
   --query 'Versions[0].VersionId' --output=text
 ```
