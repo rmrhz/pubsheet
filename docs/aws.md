@@ -41,3 +41,12 @@ aws s3api list-object-versions \
   --no-paginate \
   --query 'Versions[0].VersionId' --output=text
 ```
+
+## Lambda
+* Return the most recent function version
+```bash
+aws lambda list-versions-by-function \
+	--function-name "FUNCTION_NAME" \
+	--query "reverse(sort_by(Versions, &Version))[0].Version" \
+	--output text
+```
