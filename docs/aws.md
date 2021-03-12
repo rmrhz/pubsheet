@@ -47,6 +47,6 @@ aws s3api list-object-versions \
 ```bash
 aws lambda list-versions-by-function \
   --function-name "FUNCTION_NAME" \
-  --query "reverse(sort_by(Versions, &Version))[0].Version" \
+  --query "reverse(Versions[*].{Version:Version})[0].Version" \
   --output text
 ```
