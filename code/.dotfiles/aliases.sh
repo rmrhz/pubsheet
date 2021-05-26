@@ -13,6 +13,9 @@ alias gphm="git push -u origin master"
 alias gpcb='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias gplm="git pull origin master"
 
+# Worded alises
+alias whatsmyip="curl 'https://api.ipify.org?format=text' -w '\n'"
+
 # Personalization Refresh
 alias rpr="cat < $PERSONALIZATION_DIR/.bash_profile > ~/.bash_profile && source ~/.bash_profile"
 alias tns="sudo hwclock -s"
