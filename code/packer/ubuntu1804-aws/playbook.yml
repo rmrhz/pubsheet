@@ -1,0 +1,54 @@
+---
+- name: Setup the AMI
+  hosts: all
+  become: true
+  become_user: root
+  remote_user: ubuntu
+
+  tasks:
+    - name: Set default locale
+      shell: export LANG=en_US.UTF-8
+
+    - name: Install third party repositories
+      apt_repository: repo='{{ item }}'
+      with_items:
+        - ppa:certbot/certbot
+        - ppa:brightbox/ruby-ng # AWS and/or Canonical's release breaks from time to time
+
+    - name: Update apt repo and cache on all Debian/Ubuntu boxes
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Upgrade all packages on servers
+      apt: upgrade=dist force_apt_get=yes
+
+    - name: Remove default packages
+      action: apt pkg=apache2 state=absent
+
+    - name: Install general related dependencies
+      apt:
+        state: present
+        pkg:
+         - ruby
+         - awscli
+         - nginx
+         - python-certbot-nginx
+
+    - name: Download AWS CodeDeploy Agent
+      get_url:
+        url: https://aws-codedeploy-ap-southeast-1.s3.ap-southeast-1.amazonaws.com/latest/install
+        dest: /tmp/awscodedeploy
+        mode: 755
+
+    - name: Install AWS CodeDeploy Agent
+      shell: ./awscodedeploy auto
+      args:
+        chdir: /tmp/
+
+    - name: Download AWS CloudWatch Agent
+      get_url:
+        url: https://s3.amazonaws.com/amazoncloudwatch-agent/debian/amd64/latest/amazon-cloudwatch-agent.deb
+        dest: /tmp/
+        mode: 755
+
+    - name: Install AWS CloudWatch Agent
+      apt: deb="/tmp/amazon-cloudwatch-agent.deb"

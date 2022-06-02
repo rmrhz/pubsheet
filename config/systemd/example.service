@@ -1,0 +1,14 @@
+[Unit]
+Description=Sample Service
+[Service]
+User=ubuntu
+WorkingDirectory=/location
+ExecStart=/binary_executable
+StandardOutput=file:/location/access.log
+StandardError=file:/location/error.log
+SuccessExitStatus=143
+TimeoutStopSec=30
+Restart=on-failure
+RestartSec=30
+[Install]
+WantedBy=multi-user.target

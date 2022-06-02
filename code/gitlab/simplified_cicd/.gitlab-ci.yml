@@ -1,0 +1,35 @@
+image: web:latest
+
+stages:
+  - build
+  - deploy
+
+default:
+  before_script:
+    - chmod -R +x scripts/
+    
+build:
+  stage: build
+  script:
+    - scripts/configure_build_env.sh
+  artifacts:
+    reports:
+      dotenv: build/deploy.env
+  environment:
+    name: $DEPLOY_ENV_NAME
+  tags:
+    - ops
+
+deploy:
+  stage: deploy
+  before_script:
+    - source scripts/import_build_env.sh
+  script:
+    - aws s3 sync --acl public-read dist/ s3://$DEPLOY_ENV_URL/
+  except:
+    changes:
+      - README.md
+  environment:
+    name: $DEPLOY_ENV_NAME
+  tags:
+    - ops

@@ -1,0 +1,130 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "{LAMBDA_NAME}_{FEATURE_NAME}"
+  },
+  "paths" : {
+    "/{proxy+}" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "proxy",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "security" : [ {
+          "api_key" : [ ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "{LAMBDA_ARN}:{FEATURE_NAME}/invocations",
+          "passthroughBehavior" : "when_no_match",
+          "cacheNamespace" : "",
+          "timeoutInMillis" : 29000,
+          "cacheKeyParameters" : [ "method.request.path.proxy" ],
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws_proxy"
+        }
+      },
+      "put" : {
+        "parameters" : [ {
+          "name" : "proxy",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "security" : [ {
+          "api_key" : [ ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "{LAMBDA_ARN}:{FEATURE_NAME}/invocations",
+          "passthroughBehavior" : "when_no_match",
+          "cacheNamespace" : "",
+          "timeoutInMillis" : 29000,
+          "cacheKeyParameters" : [ "method.request.path.proxy" ],
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws_proxy"
+        }
+      },
+      "post" : {
+        "parameters" : [ {
+          "name" : "proxy",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "security" : [ {
+          "api_key" : [ ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "{LAMBDA_ARN}:{FEATURE_NAME}/invocations",
+          "passthroughBehavior" : "when_no_match",
+          "cacheNamespace" : "",
+          "cacheKeyParameters" : [ "method.request.path.proxy" ],
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws_proxy"
+        }
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "proxy",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "{LAMBDA_ARN}:{FEATURE_NAME}/invocations",
+          "passthroughBehavior" : "when_no_match",
+          "cacheNamespace" : "",
+          "timeoutInMillis" : 29000,
+          "cacheKeyParameters" : [ "method.request.path.proxy" ],
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws_proxy"
+        }
+      },
+      "x-amazon-apigateway-any-method" : {
+        "parameters" : [ {
+          "name" : "proxy",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "security" : [ {
+          "api_key" : [ ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "{LAMBDA_ARN}:{FEATURE_NAME}/invocations",
+          "passthroughBehavior" : "when_no_match",
+          "cacheNamespace" : "",
+          "timeoutInMillis" : 29000,
+          "cacheKeyParameters" : [ "method.request.path.proxy" ],
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws_proxy"
+        }
+      }
+    }
+  },
+  "components" : {
+    "securitySchemes" : {
+      "api_key" : {
+        "type" : "apiKey",
+        "name" : "x-api-key",
+        "in" : "header"
+      }
+    }
+  }
+}

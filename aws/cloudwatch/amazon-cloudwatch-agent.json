@@ -1,0 +1,169 @@
+{
+  "agent": {
+    "metrics_collection_interval": 60,
+    "logfile": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log"
+  },
+  "metrics": {
+    "metrics_collected": {
+      "cpu": {
+        "resources": [
+          "*"
+        ],
+        "measurement": [
+          {
+            "name": "cpu_usage_idle",
+            "rename": "CPU_USAGE_IDLE",
+            "unit": "Percent"
+          },
+          {
+            "name": "cpu_usage_iowait",
+            "rename": "CPU_USAGE_IOWAIT",
+            "unit": "Percent"
+          },
+          {
+            "name": "cpu_time_idle",
+            "rename": "CPU_TIME_IDLE",
+            "unit": "Percent"
+          },
+          {
+            "name": "cpu_time_iowait",
+            "rename": "CPU_TIME_IOWAIT",
+            "unit": "Percent"
+          }
+        ]
+      },
+      "disk": {
+        "resources": [
+          "/"
+        ],
+        "measurement": [
+          {
+            "name": "disk_free",
+            "rename": "DISK_FREE",
+            "unit": "Gigabytes"
+          },
+          {
+            "name": "disk_inodes_free",
+            "rename": "DISK_INODES_FREE",
+            "unit": "Count"
+          },
+          {
+            "name": "disk_inodes_total",
+            "rename": "DISK_INODES_TOTAL",
+            "unit": "Count"
+          },
+          {
+            "name": "disk_inodes_used",
+            "rename": "DISK_INODES_USED",
+            "unit": "Count"
+          }
+        ]
+      },
+      "diskio": {
+        "resources": [
+          "*"
+        ],
+        "measurement": [
+          {
+            "name": "diskio_iops_in_progress",
+            "rename": "DISKIO_IOPS_IN_PROGRESS",
+            "unit": "Megabytes"
+          },
+          {
+            "name": "diskio_read_time",
+            "rename": "DISKIO_READ_TIME",
+            "unit": "Megabytes"
+          },
+          {
+            "name": "diskio_write_time",
+            "rename": "DISKIO_WRITE_TIME",
+            "unit": "Megabytes"
+          }
+        ]
+      },
+      "mem": {
+        "measurement": [
+          {
+            "name": "mem_free",
+            "rename": "MEM_FREE",
+            "unit": "Megabytes"
+          },
+          {
+            "name": "mem_total",
+            "rename": "MEM_TOTAL",
+            "unit": "Megabytes"
+          },
+          {
+            "name": "mem_used",
+            "rename": "MEM_USED",
+            "unit": "Megabytes"
+          }
+        ]
+      },
+      "net": {
+        "resources": [
+          "eth0"
+        ],
+        "measurement": [
+          {
+            "name": "net_bytes_recv",
+            "rename": "NET_BYTES_RECV",
+            "unit": "Bytes"
+          },
+          {
+            "name": "net_bytes_sent",
+            "rename": "NET_BYTES_SENT",
+            "unit": "Bytes"
+          }
+        ]
+      },
+      "netstat": {
+        "measurement": [
+          {
+            "name": "netstat_tcp_listen",
+            "rename": "NETSTAT_TCP_LISTEN",
+            "unit": "Count"
+          },
+          {
+            "name": "netstat_tcp_syn_sent",
+            "rename": "NETSTAT_TCP_SYN_SENT",
+            "unit": "Count"
+          },
+          {
+            "name": "netstat_tcp_established",
+            "rename": "NETSTAT_TCP_ESTABLISHED",
+            "unit": "Count"
+          }
+        ]
+      },
+      "processes": {
+        "measurement": [
+          {
+            "name": "processes_blocked",
+            "rename": "PROCESSES_BLOCKED",
+            "unit": "Count"
+          },
+          {
+            "name": "processes_running",
+            "rename": "PROCESSES_RUNNING",
+            "unit": "Count"
+          },
+          {
+            "name": "processes_zombies",
+            "rename": "PROCESSES_ZOMBIES",
+            "unit": "Count"
+          }
+        ]
+      }
+    },
+    "append_dimensions": {
+      "InstanceId": "${aws:InstanceId}",
+      "AutoScalingGroupName": "${aws:AutoScalingGroupName}"
+    },
+    "aggregation_dimensions": [
+      [
+        "AutoScalingGroupName"
+      ]
+    ]
+  }
+}
