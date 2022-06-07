@@ -5,6 +5,10 @@
 # Find specific string in Nginx access logs
 zcat -f access.log* | grep example.com
 
+# Find a string from the offset
+OFFSET=69
+awk -b "{ nb += length + 1 } nb >= ${OFFSET} { print; exit }" file
+
 # Find the 5 directories with the most disk usage
 find ./ -type f -exec du -Sh {} + | sort -rh | head -n 5
 
