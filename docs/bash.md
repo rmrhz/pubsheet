@@ -5,6 +5,10 @@
 # Find specific string in Nginx access logs
 zcat -f access.log* | grep example.com
 
+# Converts decimal to hexadecimal
+INT=69
+echo "obase=16; ${INT}" | bc
+
 # Find a string from the offset
 OFFSET=69
 awk -b "{ nb += length + 1 } nb >= ${OFFSET} { print; exit }" file
