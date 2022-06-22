@@ -3,6 +3,9 @@
 
 ## Query Dump
 ```sql
+--- src: https://stackoverflow.com/questions/61459796/how-to-truncate-or-reset-mysql-5-7-statement-analysis-table-in-sys-schema
+CALL sys.ps_truncate_all_tables(FALSE);
+
 --- src : https://github.com/mysql/mysql-sys/blob/master/views/p_s/statements_with_runtimes_in_95th_percentile.sql
 SELECT DIGEST_TEXT as query,
        SCHEMA_NAME as db,
