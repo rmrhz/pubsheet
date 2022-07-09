@@ -1,1 +1,1 @@
-# AWS OIDC for Github Actions 
+# Github Actions OIDC for AWS  
