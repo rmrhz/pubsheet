@@ -1,5 +1,11 @@
 # Terraform
 
+## Code Samples
+* [Github Actions OIDC for AWS](code/terraform/oidc)
+* [EC2 NAT Gateway](code/terraform/nat)
+
+## Unorganized
+
 ```bash
 # Migration from <12 to >13
 terraform state replace-provider "registry.terraform.io/-/aws" "hashicorp/aws"
