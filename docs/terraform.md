@@ -1,8 +1,8 @@
 # Terraform
 
 ## Code Samples
-* [Github Actions OIDC for AWS](code/terraform/oidc)
-* [EC2 NAT Gateway](code/terraform/nat)
+* [Github Actions OIDC for AWS](/code/terraform/oidc)
+* [EC2 NAT Gateway](/code/terraform/nat)
 
 ## Unorganized
 
