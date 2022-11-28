@@ -4,6 +4,12 @@
 * [Github Actions OIDC for AWS](/code/terraform/oidc)
 * [EC2 NAT Gateway](/code/terraform/nat)
 
+## Related Scripts
+```sh
+# Show all deprecated resources from state
+terraform validate -json | jq -r '[ del( .diagnostics[] | select( .detail | startswith( "Experimental features" ) ) ) | .diagnostics[] | { Detail:.detail, Address:.address, Filename:.range.filename, Line:.range.start.line } ] | ( .[0] | keys_unsorted | ( . , map( length*"-" ) ) ), .[] | map(.) | @tsv' | column -ts $'\t'
+```
+
 ## Unorganized
 
 ```bash
