@@ -1,0 +1,24 @@
+name: Runit
+on:
+  pull_request:
+    types: [ closed ]
+    branches: 
+      - master
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  runit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::1223334444:role/github_actions
+          role-session-name: $github_actions
+          aws-region: us-east-1
+  
