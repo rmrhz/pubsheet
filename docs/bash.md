@@ -1,5 +1,11 @@
 # Bash
 
+## Alias Dump
+```bash
+# If we get our awscli instance from docker
+alias aws="docker run -it --rm -v ~/.aws:/root/.aws -v ~/.local/bin:/aws amazon/aws-cli"
+```
+
 ## Command Dump
 ```bash
 # Find specific string in Nginx access logs
