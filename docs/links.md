@@ -7,3 +7,6 @@ Useful links for a variety of uses
 
 ## Networking
 * https://www.calculator.net/ip-subnet-calculator.html
+
+## Testing
+* https://hurl.dev/
