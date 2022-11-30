@@ -21,4 +21,7 @@ aws ssm get-parameters --names "$PARAMETER_KEY" --with-decryption --query "Param
 ```
 
 ## Resources Links
+
+### Authentication
 * https://aws.amazon.com/blogs/security/how-to-use-g-suite-as-external-identity-provider-aws-sso/
+* https://aws.amazon.com/blogs/security/how-to-enable-secure-seamless-single-sign-on-to-amazon-ec2-windows-instances-with-aws-sso/
