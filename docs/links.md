@@ -8,5 +8,8 @@ Useful links for a variety of uses
 ## Networking
 * https://www.calculator.net/ip-subnet-calculator.html
 
+## Quick Tools
+* https://titlecapitalize.com/
+
 ## Testing
 * https://hurl.dev/
