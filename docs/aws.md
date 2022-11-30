@@ -5,6 +5,9 @@
 * [Codedeploy](aws/codedeploy.md)
 * [S3](aws/s3.md)
 
+## Resources Links
+* https://aws.amazon.com/blogs/security/how-to-use-g-suite-as-external-identity-provider-aws-sso/
+
 ## IAM Policy Cheatsheet
 
 ### Packer
