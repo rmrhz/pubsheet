@@ -1,5 +1,15 @@
 # Windows Subsystem Linux
 
+## Debug
+```bash
+# Check if we have HOME folder
+# --
+# https://github.com/wslutilities/wslu/issues/101#issuecomment-611730188
+if [ "${HOME}" = "/" ]; then
+  return
+fi
+```
+
 ## Exports
 ```bash
 # /home/{user}/.bash_profile
