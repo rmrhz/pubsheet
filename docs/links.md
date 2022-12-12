@@ -13,6 +13,7 @@ Useful links for a variety of uses
 
 ## Quick Tools
 * https://titlecapitalize.com/
+* https://codebeautify.org/jsonminifier
 
 ## Testing
 * https://hurl.dev/
