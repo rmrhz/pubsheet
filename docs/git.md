@@ -1,6 +1,7 @@
 # Git
 
 ### Ammend commit author
+src: https://stackoverflow.com/a/750182
 ```bash
 #!/bin/sh
 
