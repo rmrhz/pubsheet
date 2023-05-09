@@ -15,5 +15,6 @@ Useful links for a variety of uses
 * https://titlecapitalize.com/
 * https://codebeautify.org/jsonminifier
 
-## Testing
+## Testing / Linting
 * https://hurl.dev/
+* https://rhysd.github.io/actionlint/
