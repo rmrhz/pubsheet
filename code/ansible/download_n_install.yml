@@ -1,0 +1,19 @@
+# Src: https://dev.to/ymotongpoo/run-remote-install-scripts-without-using-curl-command-in-ansible-5b6b
+# This also conforms with checks from ansible-lint
+- name: Download & Install
+  hosts: all
+  become: true
+  become_user: root
+  remote_user: ubuntu
+
+  tasks:
+    - name: Fetch Nodev18
+      ansible.builtin.uri:
+        url: https://deb.nodesource.com/setup_18.x
+        return_content: yes
+      register: nodejs
+
+    - name: Run Nodev18 init installer
+      ansible.builtin.shell:
+        cmd: sh -s -- -y
+        stdin: "{{ nodejs.content }}"
